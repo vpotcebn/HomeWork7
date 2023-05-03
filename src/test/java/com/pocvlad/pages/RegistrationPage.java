@@ -12,11 +12,15 @@ import static com.codeborne.selenide.Selenide.open;
 public class RegistrationPage {
     CalendarComponent calendarComponent = new CalendarComponent();
     RegistrationResultsModal registrationResultsModal = new RegistrationResultsModal();
+
+    public void removebanners() {
+        Selenide.executeJavaScript("$('#fixedban').remove()");
+        Selenide.executeJavaScript("$('footer').remove()");
+    }
     public RegistrationPage openPage() {
         Configuration.browserSize = ("1920x1080");
         open("https://demoqa.com/automation-practice-form");
-        Selenide.executeJavaScript("$('#fixedban').remove()");
-        Selenide.executeJavaScript("$('footer').remove()");
+        removebanners();
 
         return this;
     }
