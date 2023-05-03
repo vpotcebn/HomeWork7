@@ -13,14 +13,14 @@ public class RegistrationPage {
     CalendarComponent calendarComponent = new CalendarComponent();
     RegistrationResultsModal registrationResultsModal = new RegistrationResultsModal();
 
-    public void removebanners() {
+    public void removeBanners() {
         Selenide.executeJavaScript("$('#fixedban').remove()");
         Selenide.executeJavaScript("$('footer').remove()");
     }
     public RegistrationPage openPage() {
         Configuration.browserSize = ("1920x1080");
-        open("https://demoqa.com/automation-practice-form");
-        removebanners();
+        open("/automation-practice-form");
+        removeBanners();
 
         return this;
     }
@@ -81,8 +81,8 @@ public class RegistrationPage {
 
     }
 
-    public RegistrationPage setPicture() {
-        $("#uploadPicture").uploadFromClasspath("11.png");
+    public RegistrationPage setPicture(String picture) {
+        $("#uploadPicture").uploadFromClasspath(picture);
 
         return this;
 

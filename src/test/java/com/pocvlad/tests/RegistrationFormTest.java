@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 
 
-public class RegistrationFormTest {
+public class RegistrationFormTest extends TestBase{
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
@@ -25,7 +25,7 @@ public class RegistrationFormTest {
                 .setBirthDate("11", "2", "1990")
                 .setSubjects("Maths")
                 .setHobbies("Reading")
-                .setPicture()
+                .setPicture("11.png")
                 .setAddress("125  Ariznona phd")
                 .setState("NCR")
                 .setCity("Delhi")
