@@ -17,6 +17,7 @@ public class RegistrationFormTest extends TestBase{
         String phoneNumber = "7910281369";
 
         registrationPage.openPage()
+                .removeBanners()
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setEmail(email)

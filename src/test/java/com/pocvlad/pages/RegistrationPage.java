@@ -1,6 +1,5 @@
 package com.pocvlad.pages;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.pocvlad.pages.components.CalendarComponent;
 import com.pocvlad.pages.components.RegistrationResultsModal;
@@ -13,17 +12,19 @@ public class RegistrationPage {
     CalendarComponent calendarComponent = new CalendarComponent();
     RegistrationResultsModal registrationResultsModal = new RegistrationResultsModal();
 
-    public void removeBanners() {
-        Selenide.executeJavaScript("$('#fixedban').remove()");
-        Selenide.executeJavaScript("$('footer').remove()");
-    }
     public RegistrationPage openPage() {
-        Configuration.browserSize = ("1920x1080");
         open("/automation-practice-form");
-        removeBanners();
 
         return this;
     }
+    public RegistrationPage removeBanners() {
+        Selenide.executeJavaScript("$('#fixedban').remove()");
+        Selenide.executeJavaScript("$('footer').remove()");
+
+        return this;
+
+    }
+
 
     public RegistrationPage setFirstName(String value) {
         $("[id=firstName]").setValue(value);
